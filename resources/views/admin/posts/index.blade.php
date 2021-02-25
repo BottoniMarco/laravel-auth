@@ -13,15 +13,15 @@
             </thead>
 
             <tbody>
-                <tr>
-                    @foreach ($posts as $post)
+                @foreach ($posts as $post)
+                    <tr>
                         
                         <td>{{ $post->id}}</td>
                         <td>{{ $post->title}}</td>
                         <td>{{ $post->created_at}}</td>
 
-                    @endforeach
-                </tr>
+                    </tr>
+                @endforeach
             </tbody>
 
         </table>
