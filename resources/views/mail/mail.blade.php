@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>mail di provs</h1>
+    <h1>{{ $post->title}}</h1>
+    <img src="{{ asset('storage/'.$post->img_path) }}" alt="{{ $post->title}}" style="width: 100%">
+    <p>{{ $post->body}}</p>
 </body>
 </html>

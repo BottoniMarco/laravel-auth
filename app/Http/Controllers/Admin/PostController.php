@@ -50,7 +50,7 @@ class PostController extends Controller
         $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
         $newPost->fill($data);
         $newPost->save();
-        Mail::to('mimmo@gmail.it')->send(new TestMail());
+        Mail::to('mimmo@gmail.it')->send(new TestMail($newPost));
         return redirect()->route('admin.posts.index');
     }
 
