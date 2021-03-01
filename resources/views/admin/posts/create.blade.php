@@ -10,7 +10,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{ route('admin.posts.store')}}" method="post">
+    <form action="{{ route('admin.posts.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
 
@@ -28,11 +28,10 @@
                     {{ old('body') }}
                 </textarea>
             </div>
-           {{-- <div class="form-group">
-                <label for="year"></label>
-                <input type="text" class="form-control" id="year" name="year" placeholder="year" value="{{ old('year') }}">
+            <div class="form-group">
+                <label for="img_path">Immagine</label>
+                <input class="form-control" type="file" id="img_path" name="img_path" accept="image/*">  
             </div>
-  --}}
 
 
             

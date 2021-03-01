@@ -20,11 +20,11 @@ class CreatePostsTable extends Migration
             $table->string('slug', 100);
             $table->text('body');
 
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
 
 
 
-            $table->timestamps();
         });
     }
 

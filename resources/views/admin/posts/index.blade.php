@@ -7,6 +7,7 @@
                 <tr>
                     <th>id</th>
                     <th>title</th>
+                    <th>immagine</th>
                     <th>date</th>
                     <th></th>
                 </tr>
@@ -18,7 +19,10 @@
                         
                         <td>{{ $post->id}}</td>
                         <td>{{ $post->title}}</td>
-                        <td>{{ $post->created_at}}</td>
+                        <td>
+                            <img src="{{ $post->img_path}}" alt=""> 
+                        </td>
+                        <td>{{ $post->created_at }}</td>
 
                     </tr>
                 @endforeach
