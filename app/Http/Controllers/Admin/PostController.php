@@ -8,6 +8,8 @@ use App\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -42,13 +44,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $newPost = new Post();
         $data["slug"] = Str::slug($data["title"]);
         $data["user_id"] = Auth::id();
         $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
-        $newPost = new Post();
         $newPost->fill($data);
         $newPost->save();
-
+        Mail::to('mimmo@gmail.it')->send(new TestMail());
         return redirect()->route('admin.posts.index');
     }
 

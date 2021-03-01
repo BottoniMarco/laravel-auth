@@ -20,7 +20,7 @@
                         <td>{{ $post->id}}</td>
                         <td>{{ $post->title}}</td>
                         <td>
-                            <img src="{{ $post->img_path}}" alt=""> 
+                            <img src="{{ asset('storage/'.$post->img_path) }}" alt="{{ $post->title}}" style="width: 80px"> 
                         </td>
                         <td>{{ $post->created_at }}</td>
 
